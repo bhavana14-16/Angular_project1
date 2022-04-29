@@ -1,0 +1,41 @@
+<mat-nav-list>
+    <div class="profile-card">
+        <div class="header">
+            <h2>Admin</h2>
+            <h4>admin@winjit.com</h4>
+        </div>
+        <img src="../../../../assets/winjit1.jpg" alt="Soufiane FADIL">
+    </div>
+
+    <mat-divider></mat-divider>
+<!-- 
+    <h2 matSubheader>Pages</h2> -->
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
+ 
+    <button mat-button [matMenuTriggerFor]="menu" >
+     Projects
+        <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLinkActive="active" routerLink="/projects/allprojects"
+            routerLinkActive="color">All projects</button>
+        <button mat-menu-item routerLinkActive="active" routerLink="/addproject"
+            routerLinkActive="color">Add Project</button>
+    </mat-menu>
+    <div>
+        <button mat-button [matMenuTriggerFor]="menu1" >
+            Employee
+               <mat-icon>expand_more</mat-icon>
+           </button>
+           <mat-menu #menu1="matMenu">
+               <button mat-menu-item routerLinkActive="active" routerLink="/allemployee"
+                   routerLinkActive="color">All Employee</button>
+               <button mat-menu-item routerLinkActive="active" routerLink="/addemployee"
+                   routerLinkActive="color">Add Employee</button>
+               <button mat-menu-item routerLinkActive="active" routerLink="/editemployee"
+                   routerLinkActive="color">Edit Employee</button>
+           </mat-menu>
+    </div>
+
+</mat-nav-list>
