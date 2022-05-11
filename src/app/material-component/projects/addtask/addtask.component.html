@@ -1,0 +1,96 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6" style="float:middle">
+
+      <form [formGroup]="taskForm" >
+      
+      <div class="form-group">
+        <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Add Task</label>
+        <input class="form-control form-control-lg" type="text" id="inputLarge">
+      </div>
+    
+      <div class="row" style="margin-top:10px;">
+        <div class="col">
+          <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Start Date</label>
+          <input type="date" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+          <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">End Date</label>
+          <input type="date" class="form-control" placeholder="Last name">
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="exampleFormControlSelect1"></label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option value="data.Id" *ngFor="let data of projectList"> {{data.ProjectName}}</option>
+        </select>
+      </div>
+
+      
+      <div class="form-group">
+        <label for="exampleFormControlSelect1"></label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option *ngFor="let data of employeeList"> {{data.name}}</option>
+        </select>
+      </div>
+
+      <mat-dialog-actions align="center">
+        <button mat-raised-button color="primary" type="submit" >Add Task</button>
+        <button  mat-raised-button color="primary" mat-dialog-close>Close</button>
+        
+    </mat-dialog-actions>
+  </form>
+</div>
+
+(click)="addProjectTask()" --> 
+
+<div class="container">
+  <p>
+    <mat-toolbar>
+      <span>Add Task</span>
+      <span class="example-spacer"></span>
+      <button mat-raised-button color="primary"(click)="openDialog()">Add</button>
+    </mat-toolbar>
+  </p>
+
+
+<mat-form-field appearance="standard">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+ 
+  <ng-container matColumnDef="taskName">
+    <th mat-header-cell *matHeaderCellDef> Task Name </th>
+    <td mat-cell *matCellDef="let row"> {{row.taskName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="taskStartDate">
+    <th mat-header-cell *matHeaderCellDef> Start date </th>
+    <td mat-cell *matCellDef="let row"> {{row.taskStartDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="taskEndDate">
+    <th mat-header-cell *matHeaderCellDef> End date</th>
+    <td mat-cell *matCellDef="let row"> {{row.taskEndDate}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let row" style="text-align: right;"> 
+      <a class="pointer" style="color: #1f516f;">
+        <mat-icon>edit</mat-icon>
+      </a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
+</div>

@@ -1,0 +1,114 @@
+<!-- <h1>Add task</h1> -->
+<div mat-dialog-content>
+    <div class="example-container">
+        <form [formGroup]="taskForm" >
+          
+            <mat-form-field class="d3" appearance="legacy">
+                <mat-label>Task Name</mat-label>
+                <input formControlName="taskName" matInput placeholder="name">
+              </mat-form-field>
+
+          <mat-form-field  class= "d1" appearance="fill">
+            <mat-select formControlName="projectId"  required>
+                <mat-option *ngFor="let data of projectList" [value]="data.Id">
+                    {{data.ProjectName}}
+                  </mat-option>
+            </mat-select>
+            <mat-label>  Projects </mat-label>
+          </mat-form-field>
+
+          <mat-form-field class= "d1" appearance="fill">
+            <mat-select formControlName="employeeId"  required>
+                <mat-option *ngFor="let data of employeeList" [value]="data.Id">
+                    {{data.name}}
+                  </mat-option>
+            </mat-select>
+            <mat-label> Employee </mat-label>
+          </mat-form-field>
+
+          <!-- <mat-form-field class= "d1" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="taskStartDate" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class= "d2" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="taskEndDate" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field> -->
+
+           
+          <mat-form-field class= "d1" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input formControlName="taskStartDate" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          
+          <mat-form-field  class= "d2" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input  formControlName="taskEndDate" matInput [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field  appearance="legacy">
+            <mat-label>Task Description</mat-label>
+            <textarea formControlName="taskDescription" matInput ></textarea>
+            <!-- <input placeholder="description"> -->
+          </mat-form-field>
+
+          <mat-dialog-actions align="end">
+            <button  mat-raised-button color="primary" (click)="addTask()">Save</button>
+            <button  mat-raised-button color="warn" mat-dialog-close >Close</button>
+        </mat-dialog-actions>
+        </form>
+      </div>
+      </div>
+      
+    
+    <!-- <div class="row">
+        <div class="col-md-6" style="float:middle">
+    
+          <form [formGroup]="taskForm" >
+          
+          
+          <div class="form-group">
+            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge"style="width:100%" >Add Task</label>
+            <input class="form-control form-control-lg" type="text" id="inputLarge">
+          </div>
+        
+          <div class="row" style="margin-top:10px;">
+            <div class="col">
+              <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Start Date</label>
+              <input type="date" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+              <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">End Date</label>
+              <input type="date" class="form-control" placeholder="Last name">
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option value="data.Id" *ngFor="let data of projectList"> {{data.ProjectName}}</option>
+            </select>
+          </div>
+    
+          
+          <div class="form-group">
+            <label for="exampleFormControlSelect1"></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option *ngFor="let data of employeeList"> {{data.name}}</option>
+            </select>
+          </div>
+     -->
+          <!-- <mat-dialog-actions align="center">
+            <button  mat-raised-button color="primary" mat-dialog-close>Close</button>
+            
+        </mat-dialog-actions> -->
+   
